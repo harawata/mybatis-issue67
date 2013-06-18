@@ -37,7 +37,7 @@ public class Issue67Test {
    * This test does not use Spring at all.
    */
   @Test
-  public void testIssue67() throws Exception {
+  public void testWithoutSpring() throws Exception {
     SqlSessionFactory sqlSessionFactory = pureMyBatisSetup();
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
@@ -71,7 +71,7 @@ public class Issue67Test {
    * This test uses Spring.
    */
   @Test
-  public void shouldReturnMapper() {
+  public void testWithSpring() {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:org/apache/ibatis/submitted/foreach/applicationContext.xml");
 
     Mapper mapper = (Mapper) context.getBean("mapper");
